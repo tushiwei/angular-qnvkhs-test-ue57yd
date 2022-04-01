@@ -1,0 +1,22 @@
+<h1>My Books Collection</h1>
+<!-- TODO 4: replace with a component,
+  <book-list [title]="Books", [books]="books$ | async" (onClick)="onAdd($event)"></book-list>
+  <book-list [title]="My favorite Collection", [books]="favorites$ | async" (onClick)="onRemove($evevt)"></book-list>
+-->
+<h2>Books</h2>
+<ul *ngFor="let book of books$ | async">
+  <li class="book-item">
+    <p>{{ book.volumeInfo.title }}</p>
+    <span> by {{ book.volumeInfo.authors }}</span>
+    <!-- TODO 2: click to add item to favorite collection -->
+    <button>Add to Collection</button>
+  </li>
+</ul>
+<h2>My favorite Collection</h2>
+<ul *ngFor="let book of favorites$ | async">
+  <li>
+    <p>{{ book.volumeInfo.title }}</p>
+    <span> by {{ book.volumeInfo.authors }}</span>
+    <!-- TODO 3: implement remove item -->
+  </li>
+</ul>
